@@ -9,12 +9,17 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+    <table style="width:500px">
+        <tr>
+            <td><a href="homepage.aspx">add logo here</a></td>
+            <td><a href="homepage.aspx">home page</a></td>
+            <td><a href="info.aspx">info page</a></td>
+        </tr>
+
+    </table>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
-    </form>
+    
 </body>
 </html>
