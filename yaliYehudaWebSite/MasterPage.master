@@ -5,6 +5,24 @@
 <html>
 <head runat="server">
     <title></title>
+    <style> 
+        table, th, td { 
+            border : 2px solid black;        
+            border-collapse: collapse;   
+            
+        }        
+        a {
+            text-decoration: none;
+            color: black;
+            -webkit-backdrop-filter: inherit;
+            backdrop-filter: inherit;
+        }
+        
+             
+                  
+                      
+          
+    </style>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -14,6 +32,11 @@
             <td><a href="homepage.aspx">add logo here</a></td>
             <td><a href="homepage.aspx">home page</a></td>
             <td><a href="info.aspx">info page</a></td>
+            <td><a href="contact.aspx">contact page</a></td>
+            <td><a href="gallery.aspx">gallery page</a></td>
+            <td><a href="login.aspx">login page</a></td>
+            <td><a href="register.aspx">register page</a></td>
+            <td><a href="profile.aspx">profile page</a></td>
         </tr>
 
     </table>
