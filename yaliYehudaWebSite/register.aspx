@@ -14,10 +14,16 @@
 <input type="text" id="email" name="email"><br />
        <label for="pass">password:</label><br>
 <input type="text" id="pass" name="pass"><br />
+            <label for="age">age</label><br />
   <input type="radio" id="18+" name="age" value="18+">
   <label for="18+">older then 18</label><br>
   <input type="radio" id="18-" name="age" value="18-">
   <label for="18-">under 18</label><br>
+            <label for="exp">have you coded before?</label><br />
+            <input type="radio" id="" name="exp" value="have">
+<label for="have">have coded before</label><br>
+<input type="radio" id="havenot" name="exp" value="havenot">
+<label for="">didnt code before</label><br>
         <input type="submit" value="Submit">              
            </fieldset>
       </form>
