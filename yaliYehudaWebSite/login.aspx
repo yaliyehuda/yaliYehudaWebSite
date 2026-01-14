@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#"  AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="signin" %>
+﻿    <%@ Page Title="" Language="C#"  AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="signin" %>
 
 
     <style>
@@ -90,12 +90,12 @@
         
         <div class="input-group">
             <label>Email</label>
-            <input type="email" name="Email" required placeholder="name@company.com" />
+            <input type="email" name="email" required placeholder="name@company.com" />
         </div>
 
         <div class="input-group">
             <label>Password</label>
-            <input type="password" name="Password" required placeholder="••••••••" />
+            <input type="password" name="password" required placeholder="••••••••" />
         </div>
 
         <button type="submit" class="login-button">Sign In</button>
