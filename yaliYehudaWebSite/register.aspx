@@ -82,9 +82,9 @@ transition: background 0.2s;
     </div>
         <div>
             <label for="exp">have you coded before?</label><br />
-            <input type="radio" id="" name="exp" value="have">
+            <input type="radio" id="" name="exp" value="1">
 <label for="have">have coded before</label><br>
-<input type="radio" id="havenot" name="exp" value="havenot">
+<input type="radio" id="havenot" name="exp" value="0">
 <label for="">didnt code before</label><br>
     </div>
         
