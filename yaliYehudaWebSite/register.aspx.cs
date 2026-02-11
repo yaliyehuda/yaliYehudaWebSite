@@ -5,15 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class form : System.Web.UI.Page
+public partial class register : System.Web.UI.Page
 {
+    public string stResult = "";
     protected void Page_Load(object sender, EventArgs e)
     {
        if (Page.IsPostBack)
        {
-           string fname = Request.Form["fname"];
-           string password = Request.Form["password"];
-           string email = Request.Form["email"];
+            string email = Request.Form["email"];
+            string password = Request.Form["password"];
+            string fname = Request.Form["fname"];
               string lname = Request.Form["lname"];
               string age = Request.Form["age"];
             string exp = Request.Form["exp"];
@@ -21,12 +22,16 @@ public partial class form : System.Web.UI.Page
             string sqlInsert = 
                 "INsert INTO TUsers " +
                 "VALUES (" +
+                "N'" + email + "', " +
+                "N'" + password + "', " +
                 "N'" + fname + "', " +
                 "N'" + lname + "', " +
-                "N'" + password + "', " +
-                "N'" + email + "', " +
                  age + ", " +
                  exp + ")";
+
+            MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
+
+          stResult = "נרשמת בהצלחה!";
 
 
         }

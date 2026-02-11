@@ -1,4 +1,4 @@
-﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master"  AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="signin" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master"  AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
@@ -105,6 +105,7 @@ justify-content: center;
         </div>
     </form>
 </div>
+     <%=stResult %>
      </center>
     </asp:Content>
 

@@ -1,12 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="form" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
         div.container-signup{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 display: grid;
-    place-items: center;
-height: 50vh;
+       align-items: center;
+justify-content: center;
+height: 75vh;
 margin: 0;
    background: white;
 padding: 2.5rem;
@@ -34,13 +35,13 @@ transition: background 0.2s;
             background-color: #0056b3;
         }
         .group {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.25rem;
 }
 
 .group label {
     display: block;
     font-size: 0.85rem;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: #555;
 }
 
@@ -86,12 +87,20 @@ transition: background 0.2s;
 <label for="have">have coded before</label><br>
 <input type="radio" id="havenot" name="exp" value="0">
 <label for="">didnt code before</label><br>
+ <!--example for checkboxes
+     <input type="checkbox" id="bike" name="bike" value="Bike">
+  <label for="bike">  bike</label><br>
+  <input type="checkbox" id="car" name="car" value="Car">
+  <label for="car"> car</label><br>
+  <input type="checkbox" id="boat" name="boat" value="Boat">
+  <label for="boat"> boat</label>-->
     </div>
         
         <button type="submit" class="button">sign up</button>           
          
       </form>
     </div>
+        <%=stResult %>
         </center>
 </asp:Content>
 
