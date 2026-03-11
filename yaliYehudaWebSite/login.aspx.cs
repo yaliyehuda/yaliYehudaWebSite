@@ -27,10 +27,9 @@ public partial class login : System.Web.UI.Page
             if (!userExists)
                 stResult = "אימייל או סיסמה שגויים";
             else
-                stResult = "משתמש רשום";
-
+                Response.Redirect("home.aspx");
         }
-    }
+        }
 }
 
     

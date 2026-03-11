@@ -10,13 +10,13 @@ public partial class register : System.Web.UI.Page
     public string stResult = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-       if (Page.IsPostBack)
-       {
+        if (Page.IsPostBack)
+        {
             string email = Request.Form["email"];
             string password = Request.Form["password"];
             string fname = Request.Form["fname"];
-              string lname = Request.Form["lname"];
-              string age = Request.Form["age"];
+            string lname = Request.Form["lname"];
+            string age = Request.Form["age"];
             string exp = Request.Form["exp"];
 
             string sqlCheck =
@@ -26,11 +26,11 @@ public partial class register : System.Web.UI.Page
 
             if (exists)
             {
-                st = "מייל שהוכנס קיים במערכת, הכנס אימייל חדש";
+                Response.Redirect("home.aspx");
             }
             else
             {
-                string sqlInsert = 
+                string sqlInsert =
                 "INsert INTO TUsers " +
                 "VALUES (" +
                 "N'" + email + "', " +
@@ -40,11 +40,12 @@ public partial class register : System.Web.UI.Page
                  age + ", " +
                  exp + ")";
 
-            MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
+                MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
 
-          stResult = "נרשמת בהצלחה!";
+                stResult = "נרשמת בהצלחה!";
 
 
+            }
         }
     }
 }

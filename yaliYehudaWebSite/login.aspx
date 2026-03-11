@@ -84,7 +84,7 @@ justify-content: center;
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
  <center>
     <div class="login-container">
-    <form method="post" class="login-form">
+    <form method="post" class="login-form" runat="server">
         <h2>Welcome Back</h2>
         <p>Please enter your details</p>
         
