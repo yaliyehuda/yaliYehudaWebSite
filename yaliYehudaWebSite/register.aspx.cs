@@ -19,7 +19,18 @@ public partial class register : System.Web.UI.Page
               string age = Request.Form["age"];
             string exp = Request.Form["exp"];
 
-            string sqlInsert = 
+            string sqlCheck =
+            "SELECT * FROM tUsers WHERE Email = N'" + email + "'";
+
+            bool exists = MyAdoHelper.IsExist(sqlCheck);
+
+            if (exists)
+            {
+                st = "מייל שהוכנס קיים במערכת, הכנס אימייל חדש";
+            }
+            else
+            {
+                string sqlInsert = 
                 "INsert INTO TUsers " +
                 "VALUES (" +
                 "N'" + email + "', " +
