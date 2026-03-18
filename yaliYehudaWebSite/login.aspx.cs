@@ -15,21 +15,29 @@ public partial class login : System.Web.UI.Page
             string email = Request.Form["email"]; //form:name 
             string password = Request.Form["password"];
 
-
-            // בדיקת משתמש רגיל
-            string sqlSelect =
-                "SELECT * FROM Tusers " +
-                "WHERE email = N'" + email + "' " +
-                "AND password = N'" + password + "'";
-
-            bool userExists = MyAdoHelper.IsExist(sqlSelect);
-
-            if (!userExists)
-                stResult = "אימייל או סיסמה שגויים";
+            if (email == "cool@email.com" && password == "adminpower")
+            {
+                Response.Redirect("Admin.aspx");
+            }
             else
-                Response.Redirect("home.aspx");
+            {
+
+                // בדיקת משתמש רגיל
+                string sqlSelect =
+                    "SELECT * FROM Tusers " +
+                    "WHERE email = N'" + email + "' " +
+                    "AND password = N'" + password + "'";
+
+                bool userExists = MyAdoHelper.IsExist(sqlSelect);
+
+                if (!userExists)
+                    stResult = "אימייל או סיסמה שגויים";
+                else
+                    Response.Redirect("home.aspx");
+            }
         }
-        }
+    }
 }
+
 
     
