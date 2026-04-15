@@ -19,6 +19,11 @@ public partial class register : System.Web.UI.Page
             string age = Request.Form["age"];
             string exp = Request.Form["exp"];
 
+            string[] hobbiesArr = Request.Form.GetValues("checkb");
+            string hobbies = "";
+            if (hobbiesArr != null)
+                hobbies = string.Join(",", hobbiesArr);
+
             string sqlCheck =
             "SELECT * FROM tUsers WHERE Email = N'" + email + "'";
 
