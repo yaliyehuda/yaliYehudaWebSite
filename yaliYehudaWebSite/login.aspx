@@ -13,10 +13,12 @@
         background-color: #f4f7f6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    height: 50vh;
+    height: 45vh;
     margin: 0;
     align-items: center;
 justify-content: center;
+position : relative;
+top : 150px;
  
   
  
@@ -65,7 +67,7 @@ justify-content: center;
 }
 
 .login-button:hover {
-    background-color: #0056b3;
+    background-color: #76aef3;
 }
 
 .footer-links {

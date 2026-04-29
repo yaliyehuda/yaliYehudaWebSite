@@ -17,7 +17,10 @@ public partial class login : System.Web.UI.Page
 
             if (email == "cool@email.com" && password == "adminpower")
             {
-                Response.Redirect("Admin.aspx");
+                Session["name"] = "admin";  
+                Session["nihol"] = "yes";
+
+                Response.Redirect("admin.aspx");
             }
             else
             {
@@ -28,12 +31,19 @@ public partial class login : System.Web.UI.Page
                     "WHERE email = N'" + email + "' " +
                     "AND password = N'" + password + "'";
 
-                bool userExists = MyAdoHelper.IsExist(sqlSelect);
+                System.Data.DataTable dt = MyAdoHelper.ExecuteDataTable(sqlSelect);
 
-                if (!userExists)
-                    stResult = "אימייל או סיסמה שגויים";
+                if (dt.Rows.Count == 0)
+                {
+                    stResult = "אימייל או סיסמא לא נכונים";
+                }
                 else
-                    Response.Redirect("home.aspx");
+                {
+                    Session["user"] = "ok";
+                    Session["name"] = dt.Rows[0]["fname"];
+
+                    Response.Redirect("homepage.aspx");
+                }
             }
         }
     }
