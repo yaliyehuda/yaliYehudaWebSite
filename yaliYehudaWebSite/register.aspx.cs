@@ -31,7 +31,7 @@ public partial class register : System.Web.UI.Page
 
             if (exists)
             {
-                Response.Redirect("home.aspx");
+                Response.Redirect("homepage.aspx");
             }
             else
             {

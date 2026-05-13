@@ -38,8 +38,11 @@
             <td><a class ="a" herf="info.aspx">info page</a></td>
             <td><a class ="a" href="contact.aspx">contact page</a></td>
             <td><a class="a" href="gallery.aspx">gallery page</a></td>
+            <%if (Session["nihol"] != "yes" && Session["user"] != "ok")
+             {  %>
             <td><a class="a" href="login.aspx">login page</a></td>
             <td><a class="a" href="register.aspx">register page</a></td>
+            <% } %>
             <td><a class="a" href="profile.aspx">profile page</a></td>
             <%if (Session["nihol"] == "yes" || Session["user"] == "ok")
                 {  %>

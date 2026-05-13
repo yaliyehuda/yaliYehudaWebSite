@@ -1,6 +1,58 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script language="javascript">
+        function checkall() {
+            fnameErr.innerHTML = "";
+            lnameErr.innerHTML = "";
+        
+        result = true;
+            
+        //בדיקת שגיאות
+        if (checkFirstName() == false)
+            result = false;
+        if (!checkLastName())
+            result = false;
+        //...
+        //אם הכל תקין יחזיר TRUE
+        //אם הייתה שגיאה יחזור FALSE
+        return result;
+        }
+
+        function checkFirstName() { 
+            name = document.getElementById("fname").value;
+
+            if (name.length < 2) {
+                fnameErr.innerHTML = "שם חייב להכין לפחות שני תווים";
+                return false;
+            }
+            if (name.length > 10) {
+                fnameErr.innerHTML = "שם ארוך מידי";
+                return false;
+            }
+
+            return true;
+        }
+
+        function checkLastName() { 
+        name = document.getElementById("lname").value;
+
+        if (name.length < 2) {
+            lnameErr.innerHTML = "שם חייב להכין לפחות שני תווים";
+            return false;
+        }
+        if (name.length > 10) {
+            lnameErr.innerHTML = "שם ארוך מידי";
+            return false;
+        }
+
+        return true;
+}
+
+
+
+
+    </script>
     <style>
         div.container-signup{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,19 +109,23 @@ transition: background 0.2s;
  
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
     <center>
     <div class="container-signup">
       
-    <form id="login" runat="server" method="post">
+    <form id="login" runat="server" method="post" onsubmit="return checkall();">
         <h1>signup</h1>
         <div class="group">  
   <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="fname"  required placeholder="enter your first name"><br>
+            <span id ="fnameErr"></span>
+            <br />
             </div>
         <div class="group">
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname" required placeholder="enter your last name" ><br />
+            <span id ="lnameErr"></span>
+               <br />
         </div>
         <div class="group">
 <label for="email">email:</label><br>
