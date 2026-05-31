@@ -140,11 +140,11 @@ transition: background 0.2s;
   <input type="text" id="age" name="age" required placeholder="enter your age">
     </div>
         <div>
-            <label for="exp">have you coded before?</label><br />
+            <label for="exp">want to sign up</label><br />
             <input type="radio" id="" name="exp" value="1">
-<label for="have">have coded before</label><br>
+<label for="have">yes</label><br>
 <input type="radio" id="havenot" name="exp" value="0">
-<label for="">didnt code before</label><br>
+<label for="havenot">no</label><br>
  <!--example for checkboxes
      <input type="checkbox" id="bike" name="bike" value="Bike">
   <label for="bike">  bike</label><br>

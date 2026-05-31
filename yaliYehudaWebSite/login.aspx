@@ -70,17 +70,6 @@ top : 150px;
     background-color: #76aef3;
 }
 
-.footer-links {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.footer-links a {
-    font-size: 0.8rem;
-    color: #007bff;
-    text-decoration: none;
-}
-
     </style>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -102,9 +91,7 @@ top : 150px;
 
         <button type="submit" class="login-button">Sign In</button>
         
-        <div class="footer-links">
-            <a href="#">Forgot password?</a>
-        </div>
+
     </form>
 </div>
      <%=stResult %>
