@@ -5,14 +5,22 @@
         function checkall() {
             fnameErr.innerHTML = "";
             lnameErr.innerHTML = "";
-        
+            passErr.innerHTML = "";
+            mailErr.innerHTML = "";
+            ageErr.innerHTML = "";
         result = true;
             
         //בדיקת שגיאות
         if (checkFirstName() == false)
             result = false;
         if (!checkLastName())
-            result = false;
+                result = false;
+            if (checkpass() == false)
+                result = false;
+            if (checkemail() == false)
+                result = false;
+            if (checkage() == false)
+                result = false;
         //...
         //אם הכל תקין יחזיר TRUE
         //אם הייתה שגיאה יחזור FALSE
@@ -48,10 +56,39 @@
 
         return true;
 }
+        function checkemail() {
+            email = document.getElementById("email").value;
 
+            if (email.indexOf("@gmail.com") < 0) {
+                mailErr.innerHTML = "this isn't a real email";
+                return false;
+            }
+            return true;
+        }
 
+            function checkpass() {
+                pass = document.getElementById("password").value;
 
+                if (pass.length < 3) {
+                    passErr.innerHTML = "הסיסמה קצרה ";
+                    return false;
+                }
+                if (pass.length > 10) {
+                    passErr.innerHTML = "הסיסמה גדולה  ";
+                    return false;
+                }
+                return true;
+            }
+                function checkage() {
+                    let age = parseInt(document.getElementById("age").value);
 
+                    if (isNaN(age) || age < 0 || age > 99) {
+                        document.getElementById("ageErr").innerHTML = "לא גיל אמיתי";
+                        return false;
+                    }
+
+                    return true;
+                }
     </script>
     <style>
         div.container-signup{
@@ -117,34 +154,40 @@ transition: background 0.2s;
         <h1>signup</h1>
         <div class="group">  
   <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname"  required placeholder="enter your first name"><br>
+  <input type="text" id="fname" name="fname"   placeholder="enter your first name"><br>
             <span id ="fnameErr"></span>
             <br />
             </div>
         <div class="group">
   <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" required placeholder="enter your last name" ><br />
+  <input type="text" id="lname" name="lname"  placeholder="enter your last name" ><br />
             <span id ="lnameErr"></span>
                <br />
         </div>
         <div class="group">
 <label for="email">email:</label><br>
-<input type="text" id="email" name="email" required placeholder="enter your email"><br />
+<input type="text" id="email" name="email"  placeholder="enter your email"><br />
+            <span id ="mailErr"></span>
+<br />
     </div>
         <div class=" group">
        <label for="password">password:</label><br>
-<input type="text" id="password" name="password" required placeholder="enter a password"><br />
+<input type="text" id="password" name="password"  placeholder="enter a password"><br />
+            <span id ="passErr"></span>
+<br />
     </div>
         <div class="group">
             <label for="age">age</label><br />
-  <input type="text" id="age" name="age" required placeholder="enter your age">
+  <input type="text" id="age" name="age"  placeholder="enter your age">
+            <span id ="ageErr"></span>
+<br />
     </div>
         <div>
-            <label for="exp">want to sign up</label><br />
+            <!-- <label for="exp">want to sign up</label><br />
             <input type="radio" id="" name="exp" value="1">
 <label for="have">yes</label><br>
 <input type="radio" id="havenot" name="exp" value="0">
-<label for="havenot">no</label><br>
+<label for="havenot">no</label><br>-->
  <!--example for checkboxes
      <input type="checkbox" id="bike" name="bike" value="Bike">
   <label for="bike">  bike</label><br>
